@@ -1,7 +1,9 @@
 footer {
     text-align: center;
-    background-color: var(--subColor);
     color: #fff;
+}
+.footerBody {
+    background-image: url(../images/footer/footer.svg);
 }
 .footerLogo {
     width: 30vw;
@@ -38,7 +40,7 @@ footer {
 	align-items: center;	
 }
 .fas_sns_circlecolor li:nth-child(1) a{
-    background: #66ccff;
+    background: #1E3050;
 }
 .fas_sns_circlecolor li:nth-child(2) a{
     background: #33cc33;
