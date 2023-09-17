@@ -42,7 +42,7 @@ h1 {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-image: url(../images/mainBg.jpg);
+  background-image: url(../images/main/mainBg.jpg);
 }
 .mainText {
   text-align: center;
