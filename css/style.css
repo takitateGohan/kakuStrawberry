@@ -7,11 +7,19 @@
     --fontSizeBig: 8vw;
     --fontsizeNormal: 6vw;
   }
-  html {
+
+html {
     font: normal normal normal 62.5%/1 "GENJ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",  "メイリオ", Meiryo, "ＭＳ Ｐゴシック", 'Open Sans', osaka, Arial, Verdana, sans-serif;
     color: #333;
     font-size: 100%;
 }
+
+img {
+	user-drag: none;
+	-webkit-user-drag: none;
+	-moz-user-select: none;
+}
+
 .button {
   text-align: center;
   margin: 0 auto;
@@ -44,6 +52,7 @@ h1 {
   background-repeat: no-repeat;
   background-image: url(../images/main/mainBg.jpg);
 }
+
 .mainText {
   text-align: center;
   font-size: var(--fontSizeBig);
@@ -53,6 +62,7 @@ h1 {
                0 -1px 0 var(--mainColor), 0 1px 0 var(--mainColor),
                1px -1px 0 var(--mainColor), 1px 0 0 var(--mainColor), 1px 1px 0 var(--mainColor);
 }
+
 .reserveButton {
   width: 50vw;
   font-size: 5vw;
