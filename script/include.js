@@ -3,9 +3,9 @@
 // common html の読み込み
 $(function () {
     $.ajaxSetup({ cache: false });
-    $("header").load("../common/header.html");
-    $("footer").load("../common/footer.html");
-    $("nav").load("../common/hamburger.html");
+    $("header").load("https://takitateGohan.github.io/kakuStrawberry/common/header.html");
+    $("footer").load("https://takitateGohan.github.io/kakuStrawberry/common/footer.html");
+    $("nav").load("https://takitateGohan.github.io/kakuStrawberry/common/hamburger.html");
 });
 
 // $(function() {
