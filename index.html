@@ -4,43 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="images/favicon.svg">
-    <title>架空農園</title>
+
+    <!-- スマートフォンの拡大禁止 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- キーワードの設定 -->
+    <meta name="keywords" content="いちご,いちご狩り,関東,栃木">
+
+    <title>いちご狩り - 栃木の『架空農園』</title>
+    <meta name="description" content="お腹いっぱい美味しい「いちご」を食べませんか。小さなお子様も手の届くいちごを用意しております。自慢のいちごを使った商品も販売していますので、お家でもいちごを楽しむことができます。">
+
+    <!-- sns icon Font awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="script/jquery-3.4.1.min.js"></script>
+
+    <!-- script -->
+    <script src="script/include.js"></script>
+    <script src="script/script.js"></script>
 
     <!-- reset css -->
     <link rel="stylesheet" href="css/destyle.css">
-
-    <!-- css ファイルの呼び出し -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    
-    <!-- sns icon Font awesome -->
-    <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
-
-    <!-- スマートフォンの拡大禁止 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    
-    <!-- common ファイルの読み込み -->
-    <!-- <script src="js/script.js"></script> -->
-    <script src="https://takitateGohan.github.io/kakuStrawberry/js/script.js"></script>
+    <link rel="stylesheet" href="css/hamburger.css">
 </head>
 <body>
-    <header></header>
-
-    <div class="mainBg">
-        <p class="mainText">美味しいイチゴと<br>待っています</p>
-        <div class="button reserveButton">
-            <a href="reserve.html">いちご狩りの予約</a>
+    <div class="wrapper">
+        <header></header>
+        <div class="titleBg mainBg">
+            <p class="mainText">美味しい<span> いちご </span>と<br>待っています</p>
+            <div class="button reserveButton">
+                <a href="reserve.html">いちご狩りの予約</a>
+            </div>
         </div>
+        <main id="home">
+            <div id="info" class="anchor">
+                <h1>お知らせ</h1>
+                <ul class="box">
+                    <li class="infoList">
+                        <div class="infoHeadLine">
+                            <div class="infoLogo storeInfoBg">
+                                <img class="infoImg" src="images/store.svg">
+                            </div>
+                            <div class="infoInner">
+                                <p class="infoDate">2022/06/10</p>
+                                <p class="infoTitle">新商品いちごのタルトの販売スタート</p>
+                            </div>
+                        </div>
+                        <div class="infoText hidden">
+                            <p>店頭販売で大人気の『いちごのタルト』がオンラインショップで購入できるようになりました。</p>
+                            <a class="linkStyle" href="itemDetail.html">『いちごのタルト』商品ページ</a>
+                            <hr>
+                        </div>
+                    </li>
+                    <li class="infoList">
+                        <div class="infoHeadLine">
+                            <div class="infoLogo strawberryInfoBg">
+                                <img class="infoImg" src="images/strawberryPicking.svg">
+                            </div>
+                            <div class="infoInner">
+                                <p class="infoDate">2022/05/21</p>
+                                <p class="infoTitle">2022年のいちご狩り終了のお知らせ</p>
+                            </div>
+                        </div>
+                        <div class="infoText hidden">
+                            <p>今年度のいちご狩りの予約が終了いたしました。たくさんの方にお越しいただき誠にありがとうございました。</p>
+                            <hr>
+                        </div>
+                    </li>
+                    <li class="infoList">
+                        <div class="infoHeadLine">
+                            <div class="infoLogo storeInfoBg">
+                                <img class="infoImg" src="images/store.svg">
+                            </div>
+                            <div class="infoInner">
+                                <p class="infoDate">2022/02/21</p>
+                                <p class="infoTitle">オンラインショップ開設</p>
+                            </div>
+                        </div>
+                        <div class="infoText hidden">
+                            <p>架空農園の商品がオンラインでも購入できるようになりました。</p>
+                            <a class="linkStyle" href="store.html">オンラインショップのページへ移動</a>
+                            <hr>
+                        </div>
+                    </li>
+                    <li class="infoList">
+                        <div class="infoHeadLine">
+                            <div class="infoLogo strawberryInfoBg">
+                                <img class="infoImg" src="images/strawberryPicking.svg">
+                            </div>
+                            <div class="infoInner">
+                                <p class="infoDate">2022/01/04</p>
+                                <p class="infoTitle">2022年のいちご狩り予約開始</p>
+                            </div>
+                        </div>
+                        <div class="infoText hidden">
+                            <p>今年度のいちご狩りの予約が始まりました。営業時間内でもいちごがなくなり次第閉園致しますので、どうぞ早めの時間にご予約することをおすすめしております。</p>
+                            <a class="linkStyle" href="#">オンラインショップのページへ移動</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="access" class="anchor">
+                <h1>アクセス</h1>
+                <div class="accessInfo">
+                    <h2>架空農園</h2>
+                    <p>&#12306 ooo-ooo XXX県XXX市架空町1-1 架空農園</p>
+                    <hr>
+            
+                    <h2>車でお越しの場合</h2>
+                    <p>ルートの説明文が入ります。ルートの説明文が入ります。ルートの説明文が入ります。ルートの説明文が入ります。</p>
+                    <hr>
+            
+                    <h2>電車でお越しの場合</h2>
+                    <p>ルートの説明文が入ります。ルートの説明文が入ります。ルートの説明文が入ります。ルートの説明文が入ります。</p>
+                </div>
+                <iframe class="googleMap"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.5319783345954!2d139.59716891524647!3d36.757803579957304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601fa6c553212035%3A0xab505b717af00e94!2z5pel5YWJ5p2x54Wn5a6u!5e0!3m2!1sja!2sjp!4v1668394307116!5m2!1sja!2sjp"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </main>
+
+        <!-- pagetop button -->
+        <div class="pagetop button hidden">
+            <div class="pagetopArrow"></div>
+            <p class="PageTopText">Topに戻る</p>
+        </div>
+        <!-- end pagetop button -->
+
+        <footer></footer>
     </div>
-    <main id="home">
-        <h1>お知らせ</h1>
-    </main>
-    
-    <footer></footer>
+    <!-- hamburger menu -->
+    <nav id="navi"></nav>
 </body>
 </html>

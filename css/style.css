@@ -1,71 +1,542 @@
 @charset "UTF-8";
+/* スマートフォンのサイズ */
+/* 320〜520px を想定 */
 
+/* ----- common ------------------------------ */
 :root {
+    /* color */
     --mainColor: #F14153;
+    --mainAccent: #e80c22;
     --subColor: #088742;
-    --subBgClor: #f4abc9;
-    --fontSizeBig: 8vw;
-    --fontsizeNormal: 6vw;
+    --subAccent: #075228;
+    --bgColor: #d6ffe9;
+    --subTextColor: #515151;
+    --borderColor: #dbdbdb;
+    --titleBorder: #fff;
+
+    /* fontSize */
+    --fontSizeBig: 7vw;
+
+    /* font */
+    --mincho: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+    --gothic: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   }
-
 html {
-    font: normal normal normal 62.5%/1 "GENJ", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",  "メイリオ", Meiryo, "ＭＳ Ｐゴシック", 'Open Sans', osaka, Arial, Verdana, sans-serif;
     color: #333;
-    font-size: 100%;
+    text-align: center;
+    font-size: 4vw;
+    line-height: 1.6;
+    font-family: var(--mincho);
+    background: #FFF;
 }
-
-img {
-	user-drag: none;
-	-webkit-user-drag: none;
-	-moz-user-select: none;
+header {
+    height: 100%;
 }
-
-.button {
-  text-align: center;
-  margin: 0 auto;
-  border: 2px solid #fff;
-  border-radius: 100vh;
-  color: #fff;
-  background-color: var(--mainColor);
+.stickyHeader {
+    position: sticky;
+    top: 0;
 }
-
-/* main */
-main {
-  margin: 2vw;
-  font-size: var(--fontsizeNormal);
-  font-weight: bold;
-}
-
 h1 {
-  display: inline-block;
-  padding: 0 2vw;
-  border-bottom: 1vw solid var(--mainColor);
+    display: inline-block;
+    border-bottom: 1vw solid var(--mainColor);
+    margin: 5vw;
+    padding: 0 3vw;
+    line-height: 1.2;
+    font-size: var(--fontSizeBig);
+    font-family: var(--gothic);
+}
+h2 {
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+    font-weight: bold;
+    font-family: var(--gothic);
+}
+hr {
+    margin: 6vw 0;
+    border-top: 1vw solid var(--borderColor);
+}
+.button {
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 100vw;
+    background-color: var(--mainColor);
 }
 
+/* ----- pageTop button --------------------- */
+.pagetop {
+    width: 20vw;
+    height: 13vw;
+    position: fixed;
+    right: 5vw;
+    bottom: 7vw;
+    border-radius: 5vw;
+    background-color: var(--mainAccent);
+    z-index: 2;
+}
+.pagetopArrow {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 5vw;
+    width: 5vw;
+    border-top: 0.5vw solid #fff;
+    border-right: 0.5vw solid #fff;
+    transform: translateY(45%) rotate(-45deg);
+}
+.PageTopText {
+    line-height: 2;
+    font-weight: bold;
+    font-size: 3vw;
+}
+/* ----- end pageTop button -----------------  */
+
+.title {
+    color: var(--mainAccent);
+    font-size: var(--fontSizeBig);
+    font-weight: bold;
+    line-height: 1.4em;
+    text-shadow: -1px -1px 0 var(--titleBorder), -1px 0 0 var(--titleBorder), -1px 1px 0 var(--titleBorder),
+                 0 -1px 0 var(--titleBorder), 0 1px 0 var(--titleBorder),
+                 1px -1px 0 var(--titleBorder), 1px 0 0 var(--titleBorder), 1px 1px 0 var(--titleBorder);
+}
+.titleBg {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+    height: 25vw;
+    font-family: var(--gothic);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url(../images/titleBg.jpg);
+}
+.box {
+    width: 100%;/* 横幅を200pxに指定 */
+    height: 60vw;/* 横幅を200pxに指定 */
+    border: 1px solid var(--borderColor);/* わかりやすくボーダーを引く */
+    overflow-y: scroll;/* 縦方向にスクロール可能にする */
+    padding: 2vw;
+}
+
+.center {
+    text-align: center;
+}
+
+/* 要素の非表示 */
+.hidden {
+    display: none;
+}
+
+/* ----- link の style 設定 -------- */
+.linkStyle {
+    color: var(--subAccent);
+    font-weight: bold;
+}
+.linkStyle::before {
+    content: '《';
+}
+.linkStyle::after {
+    content: '》';
+}
+/* --- end --- linkの style 設定 ---- */
+
+/* ページ内リンクの位置調整 */
+/* 見えない余白を入れて、idで遷移したときにヘッダーが被らないように調整 */
+div.anchor, h1.anchor {
+    display: block;
+    padding-top: 26vw;
+    margin-top: -26vw;
+}
+
+/* focus時の設定 */
+:focus {
+    outline: none;
+}
+/* input type=number のデフォルト設定 */
+input[type=number] {
+    text-align: right;
+}
+
+.cantTouch{
+    pointer-events: none;
+  }
+/* ----- end common ------------------------------ */
+
+/* ---- home ---------------------------------- */
+main {
+    margin: 4vw;
+}
 .mainBg {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100vw;
-  height: 100vw;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-image: url(../images/main/mainBg.jpg);
+    height: 100vw;
+    background-image: url(../images/mainBg.jpg);
 }
-
 .mainText {
-  text-align: center;
-  font-size: var(--fontSizeBig);
-  font-weight: bold;
-  color: #fff;
-  text-shadow: -1px -1px 0 var(--mainColor), -1px 0 0 var(--mainColor), -1px 1px 0 var(--mainColor),
-               0 -1px 0 var(--mainColor), 0 1px 0 var(--mainColor),
-               1px -1px 0 var(--mainColor), 1px 0 0 var(--mainColor), 1px 1px 0 var(--mainColor);
+    text-align: center;
+    color: #fff;
+    font-size: var(--fontSizeBig);
+    font-weight: bold;
+    line-height: 1.4em;
+    text-shadow: -1px -1px 0 var(--mainColor), -1px 0 0 var(--mainColor), -1px 1px 0 var(--mainColor),
+                 0 -1px 0 var(--mainColor), 0 1px 0 var(--mainColor),
+                 1px -1px 0 var(--mainColor), 1px 0 0 var(--mainColor), 1px 1px 0 var(--mainColor);
+}
+.mainText span {
+    color: var(--mainAccent);
+    text-shadow: -1px -1px 0 #fff, -1px 0 0 #fff, -1px 1px 0 #fff,
+                 0 -1px 0 #fff, 0 1px 0 #fff,
+                 1px -1px 0 #fff, 1px 0 0 #fff, 1px 1px 0 #fff;
+}
+.reserveButton {
+    width: 50vw;
+    font-size: 5vw;
+    line-height: 3;
+    margin-top: 4vw;
 }
 
-.reserveButton {
-  width: 50vw;
-  font-size: 5vw;
-  line-height: 3;
-  margin-top: 5vw;
+/* info */
+.infoList {
+    margin-top: 2vw;
+    margin-bottom: 4vw;
+}
+.infoHeadLine {
+    display: flex;
+}
+.infoLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    height: 14vw;
+    border-radius: 2vw;
+    margin-right: 2vw;
+}
+.storeInfoBg {
+    background: var(--subColor);
+}
+.strawberryInfoBg {
+    background: var(--mainColor);
+}
+.infoImg {
+    width: 12vw;
+    height: 12vw;
+}
+.infoInner {
+    display: block;
+    text-align: left;
+}
+.infoDate {
+    display: inline;
+    padding: 0 1vw;
+    border-bottom: 0.5vw solid #cbcbcb;
+}
+.infoTitle {
+    font-weight: bold;
+}
+.infoText {
+    text-align: left;
+    margin: 2vw;
+    color: var(--subTextColor);
+}
+
+/* access */
+.accessInfo {
+    text-align: left;
+}
+.googleMap {
+    width: 100%;
+    margin-top: 6vw;
+}
+/* ------ end home --------------------------------------- */
+
+/* ------ strawberry ------------------------------------- */
+.strawberryImg {
+    width: 50vw;
+}
+.priceTable {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* ------- end strawberry ---------------------------------- */
+
+/* ------- store ------------------------------------------- */
+.itemList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vw;
+}
+.itemList li {
+    display: block;
+    width: 40vw;
+    margin: 1vw;
+}
+.itemImg {
+    width:  40vw;
+    height: 30vw;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.itemTitle {
+    margin: 1vw;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+.itemPrice {
+    margin: 3vw;
+    font-weight: bold;
+    font-family: var(--gothic);
+}
+.itemText {
+    margin: 1vw;
+    text-align: left;
+    color: var(--subTextColor);
+}
+.moreButton {
+    width: 50vw;
+    margin: 4vw auto;
+    padding: 2vw;
+    color: var(--subTextColor);
+    border: 0.5vw solid var(--subTextColor);
+}
+/* ------- end store -------------------------------------- */
+
+/* ------- itemDetail ------------------------------------- */
+.mainImg {
+    width: 100%;
+}
+.thumbList {
+    display: flex;
+    margin: 1vw 0;
+}
+.thumbList li {
+    margin-right: 1vw;
+}
+.thumb {
+    width: 20vw;
+}
+.itemDetailTitle {
+    font-size: var(--fontSizeBig);
+    line-height: 1.4em;
+    margin: 3vw 0;
+}
+.itemDetailPrice {
+    margin: 2vw 0;
+    font-size: var(--fontSizeBig);
+    font-weight: bold;
+    font-family: var(--gothic);
+}
+.purchaseForm {
+    text-align: left;
+}
+.inputNumberForm {
+    width: 20vw;
+    margin: 2vw 0;
+    padding: 2vw;
+    border: 0.5vw solid var(--borderColor);
+}
+.purchaseButton {
+    width: 30vw;
+    font-size: 3vw;
+    line-height: 3;
+    border-radius: 2vw;
+}
+/* ------- end itemDetail ------------------------------------- */
+
+/* ------- contact -------------------------------------------- */
+.contactForm {
+    text-align: left;
+}
+.contactForm ul {
+    margin-bottom: 4vw;
+}
+.contactForm input,textarea {
+    border: 0.5vw solid var(--borderColor);
+    border-radius: 1vw;
+}
+.contactForm input:focus, textarea:focus {
+    border: 1vw solid var(--subColor);
+}
+.contactForm textarea {
+    resize: none;
+    width: 100%;
+    height: 40vw;
+    
+}
+/* ------- end contact -------------------------------------------- */
+
+/* ------- reserve ------------------------------------------------ */
+.calendar-wrap {
+    width: 100%;
+    background: #eee;
+}
+.calendar {
+    padding: 1vw;
+    width: 100%;
+    table-layout: fixed;
+}
+.calendar th, td {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+.calendar th {
+    font-weight: bold;
+}
+.sun {
+    color: red;
+}
+.sat {
+    color: blue;
+}
+/* ------- end reserve -------------------------------------------- */
+
+@media screen and ( min-width:600px )
+{
+    html {
+        font-size: 1em;
+        line-height: 1.2;
+        font-family: var(--mincho);
+        background: #FFF;
+    }
+    h1 {
+        border-bottom: 5px solid var(--mainColor);
+        margin: 30px;
+        padding: 0 10px;
+        line-height: 1.2;
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        font-family: var(--gothic);
+    }
+    hr {
+        margin: 10px 0;
+        border-top: 5px solid var(--borderColor);
+    }
+    .titleBg {
+        background-position: center center;
+    }
+    .button {
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 100vw;
+        background-color: var(--mainColor);
+    }
+    .box {
+        width: 100%;/* 横幅を200pxに指定 */
+        height: 30vw;/* 横幅を200pxに指定 */
+        border: 1px solid var(--borderColor);/* わかりやすくボーダーを引く */
+        overflow-y: scroll;/* 縦方向にスクロール可能にする */
+        padding: 10px;
+    }
+    
+    /* ----- pageTop button --------------------- */
+    .pagetop {
+        width: 10vw;
+        height: 6vw;
+        position: fixed;
+        right: 5vw;
+        bottom: 5vw;
+        border-radius: 1vw;
+        background-color: var(--mainAccent);
+        z-index: 2;
+    }
+    .pagetopArrow {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        height: 2.5vw;
+        width: 2.5vw;
+        border-top: 0.5vw solid #fff;
+        border-right: 0.5vw solid #fff;
+        transform: translateY(45%) rotate(-45deg);
+    }
+    .PageTopText {
+        line-height: 2;
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
+    /* ----- end pageTop button -----------------  */
+
+    /* -- home ------------------------------------- */
+    main {
+        margin: 10px;
+    }
+    .mainBg {
+        height: 30vw;
+        background-image: url(../images/mainBg.jpg);
+    }
+    .mainText {
+        text-align: center;
+        color: #fff;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1.4em;
+        text-shadow: -1px -1px 0 var(--mainColor), -1px 0 0 var(--mainColor), -1px 1px 0 var(--mainColor),
+                     0 -1px 0 var(--mainColor), 0 1px 0 var(--mainColor),
+                     1px -1px 0 var(--mainColor), 1px 0 0 var(--mainColor), 1px 1px 0 var(--mainColor);
+    }
+    .mainText span {
+        color: var(--mainAccent);
+        text-shadow: -1px -1px 0 #fff, -1px 0 0 #fff, -1px 1px 0 #fff,
+                     0 -1px 0 #fff, 0 1px 0 #fff,
+                     1px -1px 0 #fff, 1px 0 0 #fff, 1px 1px 0 #fff;
+    }
+    .reserveButton {
+        width: 25vw;
+        font-size: 3vw;
+        line-height: 3;
+        margin-top: 10px;
+    }
+    /* info */
+    .infoList {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .infoLogo {
+        width: 7vw;
+        height: 7vw;
+        border-radius: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .storeInfoBg {
+        background: var(--subColor);
+    }
+    .strawberryInfoBg {
+        background: var(--mainColor);
+    }
+    .infoImg {
+        width: 6vw;
+        height: 6vw;
+    }
+    .infoDate {
+        display: inline;
+        padding: 0 10px;
+        border-bottom: 2px solid #cbcbcb;
+        margin-bottom: 4px;
+    }
+    .infoTitle {
+        margin-top: 10px;
+        font-size: 1.5em;
+    }
+    .infoText {
+        margin: 15px;
+    }
+
+    /* access */
+    .accessInfo {
+        text-align: left;
+    }
+    .googleMap {
+        width: 100%;
+        margin-top: 2vw;
+    }
+    /* ------ end home --------------------------------------- */
+
 }

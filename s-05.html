@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="images/favicon.svg">
+        <title>商品詳細｜架空農園</title>
+        <meta name="description" content="3種類のいちごを食べ比べることができる観光農園">
+    
+        <!-- sns icon Font awesome -->
+        <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+    
+        <!-- jquery -->
+        <script src="script/jquery-3.4.1.min.js"></script>
+    
+        <!-- original script -->
+        <script src="script/include.js"></script>
+        <script src="script/script.js"></script>
+    
+        <!-- reset css -->
+        <link rel="stylesheet" href="css/destyle.css">
+        <!-- css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/hamburger.css">
+    </head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <main>
+            <div>
+                <img id="detailMainImg" class="mainImg" src="images/store/s-05/01.jpg">
+            </div>
+            <ul class="thumbList">
+                <li><img class="thumb" data-image="01.jpg" src="images/store/s-05/01.jpg"></li>
+            </ul>
+            <ul>
+                <p class="itemDetailTitle">商品名</p>
+                <p class="itemDetailPrice">xxx円</p>
+            </ul>
+            <hr>
+
+            <form class="purchaseForm">
+                <div>購入数<br>
+                    <label>
+                        <input class="inputNumberForm" type="number" onkeydown="return event.keyCode !== 69">
+                    </label>
+                </div>
+                <div class="center">
+                    <input class="button purchaseButton" type="submit" value="カートに入れる">
+                </div>
+            </form>
+            <hr>
+
+            <h1>商品名</h1>
+            <p>ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに商品の説明が入ります。</p>
+            
+        </main>
+        <footer></footer>
+        <script>
+            'use script'
+
+            const thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(function(item, index){
+                item.onclick = function() {
+                    console.log(this.dataset.image);
+                    document.getElementById('detailMainImg').src = 'images/store/s-05/'+this.dataset.image;
+                }
+            });
+
+        </script>
+    </div>
+    <nav id="navi" ></nav>
+</body>
+</html>

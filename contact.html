@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+
+    <!-- スマートフォンの拡大禁止 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>架空農園</title>
+    <meta name="description" content="3種類のいちごを食べ比べることができる観光農園">
+
+    <!-- sns icon Font awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="script/jquery-3.4.1.min.js"></script>
+
+    <!-- script -->
+    <script src="script/include.js"></script>
+    <script src="script/script.js"></script>
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="css/destyle.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header></header>
+        <div class="titleBg">
+            <p class="title">お問い合わせ</p>
+        </div>
+        <main id="contact">
+            <form class="contactForm" action="#">
+                <ul>
+                    <li><label for="name">お名前</label></li>
+                    <li><input type="text" id="namae" name="yourName"></li>
+                </ul>
+                <ul>
+                    <li><label for="email">メールアドレス</label></li>
+                    <li><input type="email" id="email" name="yourEmail"></li>
+                </ul>
+                <ul>
+                    <li><label for="message">お問い合わせ内容</label></li>
+                    <li><textarea name="message" id="message"></textarea></li>
+                </ul>
+            </form>
+        </main>
+        
+        <!-- pagetop button -->
+        <div class="button pagetop hidden">
+            <div class="pagetopArrow"></div>
+            <p class="PageTopText">Topに戻る</p>
+        </div>
+        <!-- end pagetop button -->
+        
+        <footer></footer>
+    </div>
+    <!-- hamburger menu -->
+    <nav id="navi"></nav>
+</body>
+</html>
