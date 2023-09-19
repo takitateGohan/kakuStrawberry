@@ -1,9 +1,14 @@
 'use strict';
 
-// リロード時にサイトのトップに戻す
-// $(function() {
-//     $('html,body').animate({ scrollTop: 0 }, '1');
-// });
+/* ------------ 共通パーツの読み込み ---------------- */
+$(function () {
+    $.ajaxSetup({ cache: false });
+    $("header").load("header.html");
+    $("footer").load("footer.html");
+    $("nav").load("hamburger.html");
+});
+
+/* ------------ end 共通パーツの読み込み ---------------- */
 
 /* ------------ stickyHeader ---------------- */
 $(window).scroll(function(){
@@ -26,12 +31,6 @@ $(window).scroll(function(){
     }
 });
 
-// html の構造が組み立てられた後に処理を実行
-// $(document).ready(function () {
-//     if (sessionStorage.getItem('sticky')) {
-//         $('header').addClass('stickyHeader');
-//     }
-// });
 /* ------------ end stickyHeader ---------------- */
 
 /* ------------ アコーディオンメニュー ------------- */
@@ -80,14 +79,15 @@ $(window).scroll(function(){
     }
 });
 
-// $(window).scroll(function(){
-//     var docHeight = $(document).innerHeight(), //ドキュメントの高さ
-//         windowHeight = $(window).innerHeight(), //ウィンドウの高さ
-//         pageBottom = docHeight - windowHeight; //ドキュメントの高さ - ウィンドウの高さ
-//     if(pageBottom <= $(window).scrollTop()) {
-//       //ウィンドウの一番下までスクロールした時に実行
-//       $('.pagetop').addClass('hidden');
-//         sessionStorage.setItem('pageTop','false');
-//     }
-// });
 /* --------------- end pageTop ------------------------ */
+
+/* --------------- hamburgerMenu toggle ---------------*/ 
+$(document).ready(function () {
+    $('#openNavi, #closeNavi').on('click', function () {
+        console.log("hamburgerButton clicked");
+        $('#navi, .wrapper').toggleClass('show');
+        $('.wrapper').toggleClass('cantTouch');
+    });
+});
+
+/* --------------- end hamburgerMenu toggle ---------------*/ 
