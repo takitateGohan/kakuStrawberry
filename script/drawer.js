@@ -2,6 +2,7 @@
 
 $(document).ready(function () {
     $('#openNavi, #closeNavi').on('click', function () {
+        console.log("hamburgerButton clicked");
         $('#navi, .wrapper').toggleClass('show');
         $('.wrapper').toggleClass('cantTouch');
     });
