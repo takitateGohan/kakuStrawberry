@@ -466,7 +466,7 @@ main {
 
     /* -- home ------------------------------------- */
     main {
-        margin: 10px;
+        margin: 0 10vw;
     }
     .mainBg {
         height: 30vw;
